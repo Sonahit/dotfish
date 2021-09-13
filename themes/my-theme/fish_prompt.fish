@@ -60,25 +60,34 @@ function show_cwd -d "Function to show the current working directory"
   if test "$theme_short_path" != 'yes' -a (prompt_pwd) != '~' -a (prompt_pwd) != '/'
     set -l cwd (dirname (prompt_pwd))
     test $cwd != '/'; and set cwd $cwd'/'
-    _prompt_segment normal cyan $cwd
+    _prompt_segment normal normal $cwd
   end
-  set_color -o cyan
+  set_color -o blue
   echo -n (basename (prompt_pwd))' '
   set_color normal
 end
 
 function show_git_info -d "Show git branch and dirty state"
   if [ (_git_branch_name) ]
-    set -l git_branch '['(_git_branch_name)']'
+    set -l git_branch (_git_branch_name)
 
     set_color -o
+
+    set_color -o blue
+
+    echo -ne "("
+    set_color -o yellow
+    echo -ne "$git_branch"
+
     if [ (_is_git_dirty) ]
-      set_color -o red
-      echo -ne "$git_branch× "
     else
-      set_color -o green
-      echo -ne "$git_branch "
+      echo -ne "×"
+      set_color -o red
     end
+
+    set_color -o blue
+    echo -ne ")"
+
     set_color normal
   end
 end
@@ -93,7 +102,7 @@ function fish_prompt
   set fish_greeting
 
   # The newline before prompts
-  echo ''
+  # echo ''
 
   show_ssh_status
   show_host
@@ -101,3 +110,4 @@ function fish_prompt
   show_git_info
   show_prompt_char
 end
+
