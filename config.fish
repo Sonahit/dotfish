@@ -1,7 +1,5 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-end
-
-function edin_normal
-  set_color normal
+    nvm use default --silent
+    set -gx fish_color_command white
 end

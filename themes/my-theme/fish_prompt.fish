@@ -93,9 +93,10 @@ function show_git_info -d "Show git branch and dirty state"
 end
 
 function show_prompt_char -d "Terminate with a nice prompt char"
-  set -q THEME_EDEN_PROMPT_CHAR
-    or set -U THEME_EDEN_PROMPT_CHAR '»'
-  echo -n -s $normal $THEME_EDEN_PROMPT_CHAR ' '
+  #  set -q THEME_EDEN_PROMPT_CHAR
+  #    or set -U THEME_EDEN_PROMPT_CHAR '»'
+  # echo -n -s $normal $THEME_EDEN_PROMPT_CHAR ' '
+  echo -n -s $normal ' '
 end
 
 function fish_prompt
