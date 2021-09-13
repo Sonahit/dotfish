@@ -47,13 +47,22 @@ end
 function show_host -d "Show host & user name"
   # Display [user & host] info
   if test "$THEME_EDEN_SHOW_HOST" = 'yes'
+
+    set -l HOST_NAME (cat /etc/hostname)
     if [ (id -u) = "0" ]
       echo -n (set_color red)
     else
       echo -n (set_color blue)
     end
-    set -l HOST_NAME (cat /etc/hostname)
-    echo -n "$USER@$HOST_NAME " (set color normal)
+
+    echo -n "$USER"
+
+    set_color normal
+    echo -n "@"
+    set_color yellow
+
+    echo -n "$HOST_NAME " (set color normal)
+
   end
 end
 
@@ -81,7 +90,6 @@ function show_git_info -d "Show git branch and dirty state"
     echo -ne "$git_branch"
 
     if [ (_is_git_dirty) ]
-    else
       echo -ne "×"
       set_color -o red
     end
