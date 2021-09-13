@@ -52,7 +52,8 @@ function show_host -d "Show host & user name"
     else
       echo -n (set_color blue)
     end
-    echo -n ''(hostname|cut -d . -f 1)ˇ$USER' ' (set color normal)
+    set -l HOST_NAME (cat /etc/hostname)
+    echo -n "$USER@$HOST_NAME " (set color normal)
   end
 end
 

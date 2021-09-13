@@ -3,7 +3,7 @@ function __node_binary_path
 end
 
 function __start_node
-  __node_binary_path --silent 2&>1 > /dev/null
+  __node_binary_path --silent 2>&1 > /dev/null
 
   if test $status -ne 0
     return 200
