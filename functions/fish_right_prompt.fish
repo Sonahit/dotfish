@@ -1,0 +1,1 @@
+/home/sonahit/.config/fish/themes/my-theme/fish_right_prompt.fish
