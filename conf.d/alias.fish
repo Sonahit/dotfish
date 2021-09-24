@@ -1,4 +1,4 @@
-alias clip="xclip -selection c"
+alias clip="wl-copy -n"
 alias el="elixir"
 alias vim="nvim"
 alias vi="nvim"
