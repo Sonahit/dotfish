@@ -1,4 +1,3 @@
-alias clip="xclip -selection c"
 alias el="elixir"
 alias vim="nvim"
 alias vi="nvim"
