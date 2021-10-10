@@ -1,1 +1,1 @@
-/home/sonahit/.config/fish/themes/my-theme/fish_prompt.fish
+/home/sonahit/.local/share/omf/themes/my-theme/fish_prompt.fish
