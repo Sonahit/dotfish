@@ -1,3 +1,3 @@
 function cpu_watch
-  watch cpupower frequency-info
+  watch -n 0.1 cpupower frequency-info
 end
