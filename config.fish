@@ -12,3 +12,15 @@ if status is-interactive
     nvm use default --silent
     set -gx fish_color_command white
 end
+
+# pnpm
+set -gx PNPM_HOME "/home/sonahit/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+#
+# set zigup bin
+set -gx PATH "$PATH:/home/sonahit/.zigup/bin/"
+
+
